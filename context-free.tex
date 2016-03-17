@@ -1,0 +1,35 @@
+Context free languages are more powerful than regular languages.\\
+E.g. $\{0^n1^n\}$ is context free not regular.\\
+They can be defined using context-free grammars (CFGs) or push down automata (PDAs). A language is context-free iff some PDA recognises it.
+\subsection{PDAs}
+Is defined as an NFA with a stack.
+\begin{itemize}
+\item The stack can hold an unlimited number of symbols supporting the usual operations
+\item $\Sigma$ is the input alphabet
+\item $\Gamma$ is the stack alphabet
+\end{itemize}
+
+\subsection{CFGs}
+\begin{itemize}
+    \item Variables/non-terminals are in CAPS: e.g.\ A, B, C
+    \item Terminals are letters of the alphabet
+\end{itemize}
+\subsubsection{Chomsky Normal Form}
+If every rule is of the form: $A\Rightarrow BC$, $A\Rightarrow a$ ($S\Rightarrow \varepsilon$ is also allowed).\\
+Every CFG is equivalent to one in Chomsky Normal Form.
+
+\subsection{Pumping Lemma for CFL}
+For every CFL, there is an integer $p$, so that every $w$ in $L$ of length at least $p$ can be divided into 5 parts: $w=uvxyz$ such that:
+\begin{enumerate}
+    \item $uv^ixy^iz\in L \forall i$ (in particular $uxz\in L$)
+    \item $vy$ is non empty
+    \item $|vxy| \leq |p|$
+\end{enumerate}
+
+\subsection{Examples}
+\begin{itemize}
+    \item $\{a^nb^nc^n\}$ is not
+    \item $\{ww|w\in {0,1}^*\}$ is not
+    \item $\{ww^R|w\in{0,1}^*\}$ IS
+\end{itemize}
+

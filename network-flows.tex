@@ -1,0 +1,32 @@
+\subsection{Maximum Flow}
+Greatest rate of transportation from source to sink, assuming G is connected ($|E| \geq |V|-1$).\\
+Value of flow is sum of flow leaving the source.
+$$\frac{x}{y}=\frac{f(u,v)}{c(u,v)}$$
+
+\subsubsection{Preserving Skew Symmetry}
+$$f(E,C)=5 \text{ then } f(C,E)=-5$$
+
+\subsection{Ford-Fulkerson Method}
+Runtime: $O(V\cdot E^2)$
+\begin{itemize}
+    \item Initially: $f(u,v) \forall u,v \in V$
+    \item Iteration: increase flow by finding augmenting path
+    \item Termination: no augmenting path can be found
+\end{itemize}
+
+\subsubsection{Residual Networks}
+$c_f(u,v)=$ residual capacity $c(u,v)-f(u,v)$\\
+For negative flow: $c_f \geq c$
+
+\subsubsection{Augmenting Path}
+The largest amount of flow that can be added is the smallest amount of residual capacity in the path.
+
+\subsection{Cut of Flow Networks}
+\begin{itemize}
+    \item A cut is the separation of vertices into two sets: $S,T$.
+    \item $f(S,T)$ is the flow across the cut (add up $S\rightarrow T$ flows, take away $S(T,S)$ flows)
+    \item $c(S,T)$ is the capacity of the cut
+    \item The flow of any cut $ =|f|$
+    \item The flow of any G is upper-bounded by capacity of any cut
+\end{itemize}
+

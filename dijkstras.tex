@@ -1,0 +1,32 @@
+\begin{itemize}
+    \item Directed cycle is positive if sum of weights is positive
+    \item Directed cycle is negative if sum of weights is negative
+    \item Shortest paths contain neither of the above
+    \item Dijkstra's algorithm solves the single-source shortest paths problem
+    \item Generalization of BFS (where weights aren't all 1)
+    \item Outputs two arrays: $d, \pi$
+    \begin{itemize}
+        \item $d$: distance between source and vertex
+        \item $\pi$: is the predecessor to the vertex
+    \end{itemize}
+\end{itemize}
+
+\subsection{Relaxation}
+\begin{itemize}
+    \item Assume every weight is positive
+    \item $d(v)$ is always an estimate for $\delta(s,v)$
+    \item Initially $d(v)=\infty$, then always $d(v)\geq \delta(s,v)$
+    \item Termination: $d(v)=\delta(s,v)$
+\end{itemize}
+
+\subsubsection{Process}
+Test if $s\rightarrow v$ can be improved by going through $u$. If so update $d(v)$ and $\pi(v)$.
+
+\subsubsection{Running time}
+\begin{itemize}
+    \item Initialisation takes $O(V)$
+    \item Finding minimum $d$ takes $O(V)$ done $|V|$ times.
+    \item Relaxation takes $O(E)$
+    \item Therefore: $O(V^2+E)=O(V^2)$
+    \item Can be improved: $O(V\log{}V+E)$ with faster $d$ selection
+\end{itemize}

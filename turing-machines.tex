@@ -1,0 +1,42 @@
+\begin{itemize}
+    \item Inifinite tape
+    \item Content unbounded but finite
+    \item First blank symbol marks end of tape
+    \item Finite state control program to move head
+    \item $\Sigma$ alphabet doesn't contain the blank symbol $\sqcup$
+    \item $\Gamma$ tape alphabet does though
+    \item r.e = Turing recognisable
+    \item recursive = Turing decidable
+\end{itemize}
+
+\subsection{Turing Recognisable}
+Language, $L$, is turing recognisable if there exists a TM that recognises it.
+
+\subsection{Turing Decidable}
+If there is a TM which accepts for every $w\in L$ and rejects for every $w \notin L$.\\
+If a TM decides L it always halts.\\
+A language $L$ is TD iff both $L$ and $\bar{L}$ are TR.
+
+\subsection{Theorems}
+\begin{itemize}
+    \item Every multitape TM has an equivalent single tape TM.
+    \item Every non deterministic TM has an equivalent single tape TM.
+    \item \begin{itemize}
+        \item BFS on all paths
+        \item Accepts on if accepting is found
+        \item DFS would not work (would get stuck on non halting path)
+        \item Use multitape TM to implement BFS
+    \end{itemize}
+\end{itemize}
+
+\subsection{Enumerators}
+Outputs a list of all words in L.\\
+Language is only turing recognisable if some enumerator enumerates it.
+
+\subsection{Universal Turing Machine}
+Every TM, $M$,  can be encoded as a word over a finite alphabet. $<M>$ denotes the encoding of $M$. A TM, $U$, takes a two part input, the encoding of the TM and the word $w$, and simulates $U$ on $w$.
+
+\subsection{The Halting Problem}
+Does a (universal) TM terminate on $w$?\\
+IS turing recognisable.\\
+IS NOT turing decidable.

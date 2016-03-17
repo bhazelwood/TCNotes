@@ -1,0 +1,73 @@
+\section{Complexity Class P}
+\begin{itemize}
+    \item (D)TIME[F]: class of algorithms that are $O(f)$
+    \item $P=\bigcup\limits_{k\geq 0}\text{TIME}[n^k]$
+    \item P problems are tractable in practise
+\end{itemize}
+
+\subsection{Satisfiability Problem}
+Can a $k$-CNF problem be satisfied. 2-Sat is in P.
+
+\subsection{Polynomial Reducability}
+If $L_1 \leq L_2$ and $L_2\in P \Rightarrow L_1 \in P$\\
+2-colourability $\leq$ 2-sat
+
+\section{Complexity Class NP}
+\subsection{Certificates}
+\begin{itemize}
+    \item Short and easily checkable
+    \item Satisfiability: truth assignment
+    \item K-Colourability: A proper colouring
+\end{itemize}
+Class of languages which have P verifiers are NP.
+
+\subsubsection{Composite Number}
+Are there integers such that $u\cdot v=k$
+
+\subsubsection{Subset Sum}
+Is there  a subset of integers which equals $k$.
+
+\subsection{Non-determinism in NP}
+Time complexity of a non-deterministic TM is the number of steps in the shortest accepting/rejecting path.\\
+If not all paths halt, NT is undefined.\\
+NTIME[f] is the class of all problems where an algorithm exists with non-deterministic time complexity $O(f)$.\\
+$$NP=\bigcup\limits_{k\geq 0}\text{NTIME}[n^k]$$
+NP means non-deterministic polynomial time.
+
+\subsubsection{Complete Problems}
+No problems in the class that are strictly harder
+
+\subsubsection{NP-Complete}
+Hardest problems in NP. Satisfiability is first NP-complete problem.
+
+\subsubsection{NP-Intermediate}
+If $P\neq NP$, there are infinitely many problems that are neither P/NP-complete. E.g.\ Graph Isomorphism.
+
+\subsection{NP-Completeness}
+Two ways for polynomial time reduction:
+\begin{enumerate}
+    \item $X\rightarrow Y$ in P steps
+    \item Solve Y using P number of calls to an oracle
+\end{enumerate}
+
+Two ways to prove NP-Completeness:
+\begin{enumerate}
+    \item Show problem is in NP
+    \item Find known NP-complete problem and show it is equivalent.
+\end{enumerate}
+
+NP-Hard if 2 is possible but not 1.
+
+\subsubsection{Pseudo-Polynomial Time}
+If length of input is not bounded by a polynomial function of the input length, e.g.\ knapsack.
+
+\subsubsection{Strongly/Weakly NP-Complete}
+Strongly if it remains NP-complete when numbers in input are bounded.\\
+Usually problems not containing numerical data + TSP are strongly NP-Complete.\\
+Subset sum and Partition are weakly NP-Complete.
+
+\subsubsection{coNP}
+For when $L$ and $\bar{L}$ have a P verifier. E.g.\ NO hamiltonian cycle and tautology.
+
+\subsubsection{coNP-completeness}
+If equivalent to another problem in coNP and both $L$ and $\bar{L}$ are NP-complete.
